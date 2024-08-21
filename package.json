@@ -1,0 +1,24 @@
+{
+  "files": ["dist"],
+  "type": "module",
+  "name": "ring-buffer-ts",
+  "version": "0.1.0",
+  "description": "A circular FIFO RingBuffer written in typescript",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urostripunovic/ring-buffer-ts.git"
+  },
+  "keywords": ["ringbuffer", "ring", "circular buffer", "circular", "buffer"],
+  "author": "Uros Tripunovic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/urostripunovic/ring-buffer-ts/issues"
+  },
+  "homepage": "https://github.com/urostripunovic/ring-buffer-ts#readme",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
