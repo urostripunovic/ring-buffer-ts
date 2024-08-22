@@ -5,7 +5,11 @@
   "version": "0.1.0",
   "description": "A circular FIFO RingBuffer written in typescript",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx @biomejs/biome lint --write src",
+    "lint:check": "npx @biomejs/biome lint src",
+    "format": "npx @biomejs/biome format --write src",
+    "format:check": "npx @biomejs/biome format src"
   },
   "repository": {
     "type": "git",
@@ -19,6 +23,7 @@
   },
   "homepage": "https://github.com/urostripunovic/ring-buffer-ts#readme",
   "devDependencies": {
+    "@biomejs/biome": "1.8.3",
     "typescript": "^5.5.4"
   }
 }

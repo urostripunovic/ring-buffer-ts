@@ -14,9 +14,13 @@
     "noImplicitOverride": true,
 
     "module": "NodeNext",
-    "module": "NodeNext",
-    "lib": ["es2022"],
-    "noEmit": true
+    "outDir": "dist",
+    "rootDir": "src",
+    "sourceMap": true,
+
+    "declaration": true,
+
+    "declarationMap": true
   }
 }
 
