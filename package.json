@@ -1,5 +1,7 @@
 {
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "name": "ring-buffer-ts",
   "version": "0.1.0",
@@ -9,13 +11,20 @@
     "lint": "npx @biomejs/biome lint --write src",
     "lint:check": "npx @biomejs/biome lint src",
     "format": "npx @biomejs/biome format --write src",
-    "format:check": "npx @biomejs/biome format src"
+    "format:check": "npx @biomejs/biome format src",
+    "docs": ""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/urostripunovic/ring-buffer-ts.git"
   },
-  "keywords": ["ringbuffer", "ring", "circular buffer", "circular", "buffer"],
+  "keywords": [
+    "ringbuffer",
+    "ring",
+    "circular buffer",
+    "circular",
+    "buffer"
+  ],
   "author": "Uros Tripunovic",
   "license": "MIT",
   "bugs": {
@@ -23,7 +32,11 @@
   },
   "homepage": "https://github.com/urostripunovic/ring-buffer-ts#readme",
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.15.4",
     "@biomejs/biome": "1.8.3",
-    "typescript": "^5.5.4"
+    "tsup": "^8.2.4",
+    "typedoc": "^0.26.6",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
   }
 }
