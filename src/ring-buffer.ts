@@ -1,10 +1,3 @@
-class NoNullError extends Error {
-  constructor() {
-    super("do not use null, use undefined instead");
-    Object.setPrototypeOf(this, NoNullError.prototype);
-  }
-}
-
 export class RingBuffer<T> {
   //rewrite to # instead of private
   #head: number;
