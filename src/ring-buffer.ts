@@ -1,5 +1,4 @@
 export class RingBuffer<T> {
-  //rewrite to # instead of private
   #head: number;
   #tail: number;
   #length: number;
