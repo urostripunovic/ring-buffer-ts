@@ -1,10 +1,15 @@
 {
-  "files": ["dist"],
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "name": "ring-buffer-ts",
   "version": "0.1.0",
   "description": "A circular FIFO RingBuffer written in typescript",
   "scripts": {
+    "build": "tsup",
+    "check-exports": "attw --pack .",
     "test": "vitest run",
     "lint": "npx @biomejs/biome lint --write src",
     "lint:check": "npx @biomejs/biome lint src",
@@ -12,11 +17,24 @@
     "format:check": "npx @biomejs/biome format src",
     "docs": ""
   },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/urostripunovic/ring-buffer-ts.git"
   },
-  "keywords": ["ringbuffer", "ring", "circular buffer", "circular", "buffer"],
+  "keywords": [
+    "ringbuffer",
+    "ring",
+    "circular buffer",
+    "circular",
+    "buffer"
+  ],
   "author": "Uros Tripunovic",
   "license": "MIT",
   "bugs": {
