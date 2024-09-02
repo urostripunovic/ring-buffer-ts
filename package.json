@@ -10,7 +10,8 @@
   "scripts": {
     "build": "tsup",
     "check-exports": "attw --pack .",
-    "test": "vitest run",
+    "test:dev": "vitest run ./src",
+    "test:build": "vitest run ./test",
     "lint": "npx @biomejs/biome lint --write src",
     "lint:check": "npx @biomejs/biome lint src",
     "format": "npx @biomejs/biome format --write src",
@@ -50,3 +51,4 @@
     "vitest": "^2.0.5"
   }
 }
+
