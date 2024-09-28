@@ -1,5 +1,5 @@
-import { RingBuffer } from "./ring-buffer.js";
-import { test, expect } from "vitest";
+import { expect, test } from "vitest";
+import { RingBuffer } from "./ring-buffer.ts";
 
 test("Simple RingBuffer test", () => {
   const buffer = new RingBuffer<number>();

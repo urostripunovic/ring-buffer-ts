@@ -8,6 +8,7 @@
   "version": "0.1.0",
   "description": "A circular FIFO RingBuffer written in typescript",
   "scripts": {
+    "release": "node release.js",
     "build": "tsup",
     "check-exports": "attw --pack .",
     "test:dev": "vitest run ./src",
@@ -45,10 +46,12 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.4",
     "@biomejs/biome": "1.8.3",
+    "kolorist": "^1.8.0",
+    "minimist": "^1.2.8",
+    "prompts": "^2.4.2",
     "tsup": "^8.2.4",
     "typedoc": "^0.26.6",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5"
   }
 }
-

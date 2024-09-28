@@ -1,9 +1,9 @@
-import { RingBuffer } from "../dist/index.js";
+import { expect, test } from "vitest";
 import { RingBuffer as CustomBuffer } from "../dist/index.cjs";
-import { test, expect } from "vitest";
+import { RingBuffer } from "../dist/index.js";
 
 test("CJS and ESM can be used interchangeably", () => {
-  const buffer = new RingBuffer<number>();
+  const buffer = new RingBuffer();
   const buffer2 = buffer;
   buffer.enqueue(5);
   expect(buffer.dequeue()).toEqual(5);
@@ -18,8 +18,8 @@ test("CJS and ESM can be used interchangeably", () => {
 });
 
 test("RingBuffer from CJS and ESM should not manipulate the same state", () => {
-  const esmBuffer = new RingBuffer<number>();
-  const cjsBuffer = new CustomBuffer<number>();
+  const esmBuffer = new RingBuffer();
+  const cjsBuffer = new CustomBuffer();
 
   esmBuffer.enqueue(1);
   esmBuffer.enqueue(2);
@@ -28,8 +28,8 @@ test("RingBuffer from CJS and ESM should not manipulate the same state", () => {
 });
 
 test("CJS and ESM are not the same object", () => {
-  const buffer = new RingBuffer<number>();
-  const buffer2 = new CustomBuffer<number>();
+  const buffer = new RingBuffer();
+  const buffer2 = new CustomBuffer();
 
   expect(buffer).toMatchObject(buffer2);
   buffer.enqueue(5);
