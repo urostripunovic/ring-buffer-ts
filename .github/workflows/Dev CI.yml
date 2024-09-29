@@ -1,0 +1,45 @@
+name: Dev CI
+
+# Least privilege
+permissions: {}
+# CI pipeline runs only on main branche
+# Runs when there is a pull request
+# Allows for manual triggers in the UI
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Creates a pipeline with a unique name either with a
+# the pull request number or with a commit hash
+# there can only be one pipeline running meaning multiple pushes cancel
+# the previous one.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+# Build runner
+  ci: 
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check lint
+        run: npm run lint:check
+
+      - name: Check format
+        run: npm run format:check
+
+      - name: Test unit
+        run: npm run test:dev
